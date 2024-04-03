@@ -145,23 +145,87 @@
   top: 45px; 
   left: 1370px; 
 	}
+  .FlightSearch
+  {
+  width: 1000px;
+  height: 80px;
+  font-size: 40px;
+  }
+  .Time
+  {
+  font-size: 20px;
+  }
+   .TimeInput
+  {
+   width: 200px;
+  height: 30px;
+  font-size: 20px;
+  }
+}
 	</style>
 </head>
 <body style="background-color:powderblue;">
 
     <h1 style="font-size: 50px">Airlines</h1>
-    <button class="Arrival">Arrival </button>
-	<button class="Departure">Departure </button>
+    <button onclick="Arrival()" class="Arrival" id="Arrival">Arrival </button>
+	<button onclick="Departure()" id="Departure"class="Departure">Departure </button>
 	<button class="Ticketpurchase">Ticket purchase </button>
 	<hr style="height: 62px; background-color: white;">
 	<button class="Aboutus">About us </button>
 	<button class="Login">Login </button>
-	<button class="Register">Register </button>
-	<button class="Profile">Profile </button>
+	<button class="Register">Register</button>
+	<button class="Profile" onclick="Profile()">Profile </button>
 	<button class="Tickets">Tickets </button>
 	<button class="Logout">Log Out </button>
-
+	
+	<h1 id="SearchFlight" style="display: none;">Search Flight:</h1>
+	<input id="FlightSearch" class="FlightSearch" style=" display: none;" type="text" placeholder="Flight number, Destination, Airport name/code">
+	<p class="Time" style="display: none;" id="Time">Time: </p>
+	<input type="datetime-local"id="TimeInput" style=" display: none;" class="TimeInput">
+	
+	
+	
+	<button  style=" display: none;" id="hiddenButtonContainer">brr</button>
+    <picture>
+    <img id="AD" src="airplane_picture.jpg" alt="Flowers" style="height:auto; width:auto;">
+</picture>
     
+	<script>
+	function Arrival()
+	{
+	 document.getElementById("SearchFlight").style.display = "block";
+	 document.getElementById("FlightSearch").style.display = "block";
+	  document.getElementById("Time").style.display = "block";
+	  document.getElementById("TimeInput").style.display = "block";
+	document.getElementById("Arrival");
+	var box = document.querySelector('.Arrival');
+      box.style.backgroundColor = 'yellow';
+	  var box = document.querySelector('.Departure');
+      box.style.backgroundColor = 'white';
+	  const element = document.getElementById("AD");
+     element.remove();
+	}
+	function Departure()
+	{
+	 document.getElementById("SearchFlight").style.display = "block";
+	 document.getElementById("FlightSearch").style.display = "block";
+	  document.getElementById("Time").style.display = "block";
+	  document.getElementById("TimeInput").style.display = "block";
+	document.getElementById("Departure");
+	var box = document.querySelector('.Departure');
+      box.style.backgroundColor = 'yellow';
+	  var box = document.querySelector('.Arrival');
+      box.style.backgroundColor = 'white';
+	  const element = document.getElementById("AD");
+     element.remove();
+	}
+	function Profile()
+	{
+	  document.body.innerHTML = '';
+	
+	}
+	</script>
+	
 </body>
 
 </html>

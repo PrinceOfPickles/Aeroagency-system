@@ -217,15 +217,32 @@ width: 200px;
   left: 800px; 
    position: absolute; 
 }
+
+.Status
+{
+font-size: 20px;
+	top: 355px; 
+  left: 1200px; 
+   position: absolute; 
+}
+.Status_input
+{
+width: 200px;
+  height: 30px;
+  font-size: 20px;
+  top: 420px; 
+  left: 1200px; 
+   position: absolute; 
+}
 }
 	</style>
 </head>
 <body style="background-color:powderblue;">
 
-    <h1 style="font-size: 50px">Airlines</h1>
+    <h1 onclick="Refresh()" style="font-size: 50px">Airlines</h1>
     <button onclick="Arrival()" class="Arrival" id="Arrival">Arrival </button>
 	<button onclick="Departure()" id="Departure"class="Departure">Departure </button>
-	<button class="Ticketpurchase">Ticket purchase </button>
+	<button onclick="Ticketpurchase()" class="Ticketpurchase">Ticket purchase </button>
 	<hr style="height: 62px; background-color: white;">
 	<button class="Aboutus">About us </button>
 	<button class="Login">Login </button>
@@ -242,8 +259,11 @@ width: 200px;
 	<input type="text"id="Arrived_from_input" style=" display: none;" class="Arrived_from_input">
 	<p class="Terminal" style="display: none;" id="Terminal">Terminal: </p>
 	<input type="text"id="Terminal_input" style=" display: none;" class="Terminal_input">
+	<p class="Status" style="display: none;" id="Status">Status: </p>
+	<input type="text"id="Status_input" style=" display: none;" class="Status_input">
 	
 	<table class="table" style="display: none;" id="Arrivaltable" >
+	
   <tr>
     <th>Time</th>
     <th>Arrived from</th>
@@ -288,11 +308,15 @@ width: 200px;
 	   document.getElementById("Arrived_from_input").style.display = "block";
 	   document.getElementById("Terminal").style.display = "block";
 	   document.getElementById("Terminal_input").style.display = "block";
+	   document.getElementById("Status").style.display = "block";
+	   document.getElementById("Status_input").style.display = "block";
 	  document.getElementById("Departuretable").style.display = "none";
 	document.getElementById("Arrival");
 	var box = document.querySelector('.Arrival');
       box.style.backgroundColor = 'yellow';
 	  var box = document.querySelector('.Departure');
+      box.style.backgroundColor = 'white';
+	  var box = document.querySelector('.Ticketpurchase');
       box.style.backgroundColor = 'white';
 	  const element = document.getElementById("AD");
      element.remove();
@@ -308,18 +332,53 @@ width: 200px;
 	 document.getElementById("Arrived_from_input").style.display = "block";
 	 document.getElementById("Terminal").style.display = "block";
 	   document.getElementById("Terminal_input").style.display = "block";
+	   document.getElementById("Status").style.display = "block";
+	   document.getElementById("Status_input").style.display = "block";
 	document.getElementById("Arrivaltable").style.display = "none";
 	document.getElementById("Departure");
 	var box = document.querySelector('.Departure');
       box.style.backgroundColor = 'yellow';
 	  var box = document.querySelector('.Arrival');
       box.style.backgroundColor = 'white';
+	  var box = document.querySelector('.Ticketpurchase');
+      box.style.backgroundColor = 'white';
 	  const element = document.getElementById("AD");
      element.remove();
+	
 	}
 	function Profile()
 	{
 	
+	}
+	function Ticketpurchase()
+	{
+	 document.getElementById("SearchFlight").style.display = "none";
+	 document.getElementById("FlightSearch").style.display = "none";
+	  document.getElementById("Time").style.display = "none";
+	  document.getElementById("TimeInput").style.display = "none";
+	  document.getElementById("Arrived_from").style.display = "none";
+	 document.getElementById("Departuretable").style.display = "none";
+	 document.getElementById("Arrivaltable").style.display = "none";
+	 document.getElementById("Arrived_from_input").style.display = "none";
+	 document.getElementById("Terminal").style.display = "none";
+	   document.getElementById("Terminal_input").style.display = "none";
+	   document.getElementById("Status").style.display = "none";
+	   document.getElementById("Status_input").style.display = "none";
+	var box = document.querySelector('.Ticketpurchase');
+      box.style.backgroundColor = 'yellow';
+	     var box = document.querySelector('.Departure');
+      box.style.backgroundColor = 'white';
+	var box = document.querySelector('.Arrival');
+      box.style.backgroundColor = 'white';
+	    const element = document.getElementById("AD");
+     element.remove();
+	}
+	function Refresh()
+	{
+	function autoRefresh() {
+        window.location = window.location.href;
+    }
+    setInterval('autoRefresh()', 5000);
 	}
 	</script>
 	

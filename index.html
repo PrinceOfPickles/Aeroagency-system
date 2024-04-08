@@ -161,6 +161,62 @@
   height: 30px;
   font-size: 20px;
   }
+  .Arrivedfrom
+  {
+    font-size: 20px;
+	top: 355px; 
+  left: 400px; 
+   position: absolute; 
+  }
+ 
+
+ .table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+   position: absolute; 
+ 
+  top: 505px; 
+  left: 30%; 
+  border: 1px solid black;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+    
+	
+	
+	.Arrived_from_input
+{
+ width: 200px;
+  height: 30px;
+  font-size: 20px;
+  top: 420px; 
+  left: 400px; 
+   position: absolute; 
+}
+
+.Terminal
+{
+font-size: 20px;
+	top: 355px; 
+  left: 800px; 
+   position: absolute; 
+}
+.Terminal_input
+{
+width: 200px;
+  height: 30px;
+  font-size: 20px;
+  top: 420px; 
+  left: 800px; 
+   position: absolute; 
+}
 }
 	</style>
 </head>
@@ -180,10 +236,40 @@
 	
 	<h1 id="SearchFlight" style="display: none;">Search Flight:</h1>
 	<input id="FlightSearch" class="FlightSearch" style=" display: none;" type="text" placeholder="Flight number, Destination, Airport name/code">
-	<p class="Time" style="display: none;" id="Time">Time: </p>
+	<p class="Time" style="display: none;" id="Time">Time:    </p>
 	<input type="datetime-local"id="TimeInput" style=" display: none;" class="TimeInput">
+	<p class="Arrivedfrom" style="display: none;" id="Arrived_from">Arrived from: </p>
+	<input type="text"id="Arrived_from_input" style=" display: none;" class="Arrived_from_input">
+	<p class="Terminal" style="display: none;" id="Terminal">Terminal: </p>
+	<input type="text"id="Terminal_input" style=" display: none;" class="Terminal_input">
 	
-	
+	<table class="table" style="display: none;" id="Arrivaltable" >
+  <tr>
+    <th>Time</th>
+    <th>Arrived from</th>
+    <th>Terminal</th>
+	<th>Status</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+</table>
+
+	<table class="table" style="display: none;" id="Departuretable" >
+  <tr>
+    <th>Time</th>
+    <th>Arrived from</th>
+    <th>Terminal</th>
+	<th>Status</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>New York</td>
+  </tr>
+</table>
 	
 	<button  style=" display: none;" id="hiddenButtonContainer">brr</button>
     <picture>
@@ -197,6 +283,12 @@
 	 document.getElementById("FlightSearch").style.display = "block";
 	  document.getElementById("Time").style.display = "block";
 	  document.getElementById("TimeInput").style.display = "block";
+	  document.getElementById("Arrived_from").style.display = "block";
+	  document.getElementById("Arrivaltable").style.display = "block";
+	   document.getElementById("Arrived_from_input").style.display = "block";
+	   document.getElementById("Terminal").style.display = "block";
+	   document.getElementById("Terminal_input").style.display = "block";
+	  document.getElementById("Departuretable").style.display = "none";
 	document.getElementById("Arrival");
 	var box = document.querySelector('.Arrival');
       box.style.backgroundColor = 'yellow';
@@ -211,6 +303,12 @@
 	 document.getElementById("FlightSearch").style.display = "block";
 	  document.getElementById("Time").style.display = "block";
 	  document.getElementById("TimeInput").style.display = "block";
+	  document.getElementById("Arrived_from").style.display = "block";
+	 document.getElementById("Departuretable").style.display = "block";
+	 document.getElementById("Arrived_from_input").style.display = "block";
+	 document.getElementById("Terminal").style.display = "block";
+	   document.getElementById("Terminal_input").style.display = "block";
+	document.getElementById("Arrivaltable").style.display = "none";
 	document.getElementById("Departure");
 	var box = document.querySelector('.Departure');
       box.style.backgroundColor = 'yellow';
@@ -221,7 +319,6 @@
 	}
 	function Profile()
 	{
-	  document.body.innerHTML = '';
 	
 	}
 	</script>

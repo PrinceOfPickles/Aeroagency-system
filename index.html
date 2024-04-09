@@ -234,6 +234,83 @@ width: 200px;
   left: 1200px; 
    position: absolute; 
 }
+.Start_point
+{
+font-size: 60px;
+	top: 200px; 
+  left: 20px; 
+   position: absolute; 
+}
+.Start_point_input
+{
+  width: 600px;
+  height: 60px;
+  font-size: 55px;
+  top: 370px; 
+  left: 20px; 
+   position: absolute; 
+}
+.Destination
+{
+font-size: 60px;
+	top: 200px; 
+  left: 700px; 
+   position: absolute; 
+}
+.Destination_input
+{
+ width: 600px;
+  height: 60px;
+  font-size: 55px;
+  top: 370px; 
+  left: 700px; 
+   position: absolute; 
+}
+.Travel_date
+{
+width: 600px;
+  height: 60px;
+  font-size: 55px;
+  top: 570px; 
+   left: 20px; 
+   position: absolute; 
+}
+.First_class
+{
+  width: 600px;
+  height: 60px;
+  font-size: 55px;
+  top: 570px; 
+   left: 500px; 
+   position: absolute; 
+}
+.First_class_label
+{
+  width: 600px;
+  height: 60px;
+  font-size: 55px;
+  top: 510px; 
+   left: 900px; 
+   position: absolute; 
+}
+.Economy
+{
+  width: 600px;
+  height: 60px;
+  font-size: 55px;
+  top: 630px; 
+   left: 500px; 
+   position: absolute; 
+}
+.Economy_label
+{
+  width: 600px;
+  height: 60px;
+  font-size: 55px;
+  top: 570px; 
+   left: 900px; 
+   position: absolute; 
+}
 }
 	</style>
 </head>
@@ -261,6 +338,15 @@ width: 200px;
 	<input type="text"id="Terminal_input" style=" display: none;" class="Terminal_input">
 	<p class="Status" style="display: none;" id="Status">Status: </p>
 	<input type="text"id="Status_input" style=" display: none;" class="Status_input">
+	<p class="Start_point" style="display: none;" id="Start_point">Starting point: </p>
+	<input type="text"id="Start_point_input" style=" display: none;" class="Start_point_input">
+	<p class="Destination" style="display: none;" id="Destination">Destination: </p>
+	<input type="text"id="Destination_input" style=" display: none;" class="Destination_input">
+	<input type="datetime-local"id="Travel_date" style=" display: none;" class="Travel_date">
+	<input type="checkbox"id="First_class" style=" display: none;" class="First_class">
+	 <p class="First_class_label" style=" display: none;" id="First_class_label"> First class</p>
+	 <input type="checkbox"id="Economy" style=" display: none;" class="Economy">
+	 <p class="Economy_label" style=" display: none;" id="Economy_label"> Economy</p>
 	
 	<table class="table" style="display: none;" id="Arrivaltable" >
 	
@@ -310,6 +396,16 @@ width: 200px;
 	   document.getElementById("Terminal_input").style.display = "block";
 	   document.getElementById("Status").style.display = "block";
 	   document.getElementById("Status_input").style.display = "block";
+	   
+	   document.getElementById("Start_point").style.display = "none";
+	  document.getElementById("Start_point_input").style.display = "none";
+	   document.getElementById("Destination").style.display = "none";
+	  document.getElementById("Destination_input").style.display = "none";
+	  document.getElementById("Travel_date").style.display = "none";
+	   document.getElementById("First_class").style.display = "none";
+	document.getElementById("First_class_label").style.display = "none";
+	  document.getElementById("Economy").style.display = "none";
+	document.getElementById("Economy_label").style.display = "none";
 	  document.getElementById("Departuretable").style.display = "none";
 	document.getElementById("Arrival");
 	var box = document.querySelector('.Arrival');
@@ -334,6 +430,16 @@ width: 200px;
 	   document.getElementById("Terminal_input").style.display = "block";
 	   document.getElementById("Status").style.display = "block";
 	   document.getElementById("Status_input").style.display = "block";
+	   
+	    document.getElementById("Start_point").style.display = "none";
+	  document.getElementById("Start_point_input").style.display = "none";
+	   document.getElementById("Destination").style.display = "none";
+	  document.getElementById("Destination_input").style.display = "none";
+	  document.getElementById("Travel_date").style.display = "none";
+	   document.getElementById("First_class").style.display = "none";
+	document.getElementById("First_class_label").style.display = "none";
+	  document.getElementById("Economy").style.display = "none";
+	document.getElementById("Economy_label").style.display = "none";
 	document.getElementById("Arrivaltable").style.display = "none";
 	document.getElementById("Departure");
 	var box = document.querySelector('.Departure');
@@ -352,6 +458,15 @@ width: 200px;
 	}
 	function Ticketpurchase()
 	{
+	 document.getElementById("Start_point").style.display = "block";
+	  document.getElementById("Start_point_input").style.display = "block";
+	   document.getElementById("Destination").style.display = "block";
+	  document.getElementById("Destination_input").style.display = "block";
+	  document.getElementById("Travel_date").style.display = "block";
+	   document.getElementById("First_class").style.display = "block";
+	document.getElementById("First_class_label").style.display = "block";
+	  document.getElementById("Economy").style.display = "block";
+	document.getElementById("Economy_label").style.display = "block";
 	 document.getElementById("SearchFlight").style.display = "none";
 	 document.getElementById("FlightSearch").style.display = "none";
 	  document.getElementById("Time").style.display = "none";

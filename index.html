@@ -1,5 +1,29 @@
-<!DOCTYPE html>
+<!-- <?php
+require_once('config/db_con_config.php');
+$query = "SELECT * FROM flightlist";
+$result = mysqli_query($con, $query);
+?> -->
 
+<!--
+
+<?php
+  while($row = mysqli_fetch_assoc*$result))
+  {
+?>
+    //arrival
+    <td><?php echo $row['FlightNr']; ?></td>
+    <td><?php echo $row['StartPoint']; ?></td>
+    <td><?php echo $row['EndPoint']; ?></td>
+    <td><?php echo $row['DepartureDate']; ?></td>
+    <td><?php echo $row['DepartureTime']; ?></td>
+<?php
+  }
+?>
+
+-->
+
+
+<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -311,8 +335,8 @@ width: 600px;
    left: 900px; 
    position: absolute; 
 }
-}
-	</style>
+
+  </style>
 </head>
 <body style="background-color:powderblue;">
 
@@ -500,9 +524,6 @@ width: 600px;
 </body>
 
 </html>
-
-
-
 
 
 

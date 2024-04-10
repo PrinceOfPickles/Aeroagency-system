@@ -1,5 +1,5 @@
 <?php
-    //require_once('config/db_con_config.php');
+    require_once('config/db_con_config.php');
 ?>
 
 
@@ -380,15 +380,27 @@ while ($row = mysqli_fetch_assoc * $result) {
   <table class="table" style="display: none;" id="Arrivaltable">
 
     <tr>
-      <th>Time</th>
-      <th>Arrived from</th>
-      <th>Terminal</th>
-      <th>Status</th>
+      <th>Flight Number</th>
+      <th>Start Point</th>
+      <th>End Point</th>
+      <th>Departure Date</th>
+      <th>Departure Time</th>
     </tr>
     <tr>
-      <td>Alfreds Futterkiste</td>
-      <td>Maria Anders</td>
-      <td>Germany</td>
+    <?php
+      $query = "SELECT FlightNr, StartPoint, EndPoint, DepartureDate, DepartureTime FROM flightlist";
+      $result = mysqli_query($con, $query);
+      while ($row = mysqli_fetch_assoc($result))
+      {
+    ?>
+      <td><?php echo $row['FlightNr']; ?></td>
+      <td><?php echo $row['StartPoint']; ?></td>
+      <td><?php echo $row['EndPoint']; ?></td>
+      <td><?php echo $row['DepartureDate']; ?></td>
+      <td><?php echo $row['DepartureTime']; ?></td>
+    <?php
+      }
+    ?>
     </tr>
   </table>
 

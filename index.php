@@ -382,20 +382,21 @@ while ($row = mysqli_fetch_assoc * $result) {
     <tr>
       <th>Flight Number</th>
       <th>Start Point</th>
-      <th>End Point</th>
+      <th>Destination</th>
       <th>Departure Date</th>
       <th>Departure Time</th>
     </tr>
     <tr>
     <?php
-      $query = "SELECT FlightNr, StartPoint, EndPoint, DepartureDate, DepartureTime FROM flightlist";
+      $query = "SELECT FlightNr, StartPoint, Destination, DepartureDate, DepartureTime FROM flightlist";
       $result = mysqli_query($con, $query);
-      while ($row = mysqli_fetch_assoc($result))
+      while ($row == mysqli_fetch_assoc($result))
       {
     ?>
+      <td><?php echo "!!!"; ?></td>
       <td><?php echo $row['FlightNr']; ?></td>
       <td><?php echo $row['StartPoint']; ?></td>
-      <td><?php echo $row['EndPoint']; ?></td>
+      <td><?php echo $row['Destination']; ?></td>
       <td><?php echo $row['DepartureDate']; ?></td>
       <td><?php echo $row['DepartureTime']; ?></td>
     <?php

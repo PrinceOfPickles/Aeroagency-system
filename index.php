@@ -1,5 +1,5 @@
 <?php
-    require_once('config/db_con_config.php');
+    require_once('db_con_config.php');
 ?>
 
 
@@ -467,15 +467,14 @@ background-color: white;
     <?php
       $query = "SELECT FlightNr, StartPoint, Destination, DepartureDate, DepartureTime FROM flightlist";
       $result = mysqli_query($con, $query);
-      while ($row == mysqli_fetch_assoc($result))
+      for ($i=0; $i < mysqli_num_rows($result); $i++)
       {
     ?>
-      <td><?php echo "!!!"; ?></td>
-      <td><?php echo $row['FlightNr']; ?></td>
-      <td><?php echo $row['StartPoint']; ?></td>
-      <td><?php echo $row['Destination']; ?></td>
-      <td><?php echo $row['DepartureDate']; ?></td>
-      <td><?php echo $row['DepartureTime']; ?></td>
+      <td><?php echo $i['FlightNr']; ?></td>
+      <td><?php echo $i['StartPoint']; ?></td>
+      <td><?php echo $i['Destination']; ?></td>
+      <td><?php echo $i['DepartureDate']; ?></td>
+      <td><?php echo $i['DepartureTime']; ?></td>
     <?php
       }
     ?>
@@ -490,9 +489,20 @@ background-color: white;
       <th>Status</th>
     </tr>
     <tr>
-      <td>Alfreds Futterkiste</td>
-      <td>Maria Anders</td>
-      <td>New York</td>
+      <?php 
+      $query = "SELECT FlightNr, StartPoint, Destination, DepartureDate, DepartureTime FROM flightlist";
+      $result = mysqli_query($con, $query);
+      for ($i=0; $i < mysqli_num_rows($result); $i++)
+      {
+    ?>
+      <td><?php echo $i['FlightNr']; ?></td>
+      <td><?php echo $i['StartPoint']; ?></td>
+      <td><?php echo $i['Destination']; ?></td>
+      <td><?php echo $i['DepartureDate']; ?></td>
+      <td><?php echo $i['DepartureTime']; ?></td>
+      <?php
+      }
+      ?>
     </tr>
   </table>
 

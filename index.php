@@ -442,6 +442,40 @@ background-color: white;
       <th>Flight Number</th>
       <th>Start Point</th>
       <th>Destination</th>
+      <th>Arrival Date</th>
+      <th>Arrival Time</th>
+    </tr>
+    <tr>
+    <?php
+      $query = "SELECT FlightNr, StartPoint, Destination, ArrivalDate, ArrivalTime FROM flightlist";
+      $resultsql = mysqli_query($con, $query);
+      for ($i=0; $i<mysqli_num_rows($resultsql); $i++)
+      {
+        $result[$i] = mysqli_fetch_array($resultsql);
+      }
+
+      for ($i=0; $i < count($result); $i++)
+      {
+        if($result[$i]['Destination'] == 'Riga')
+        {
+    ?>
+          <td><?php echo $result[$i]['FlightNr']; ?></td>
+          <td><?php echo $result[$i]['StartPoint']; ?></td>
+          <td><?php echo $result[$i]['Destination']; ?></td>
+          <td><?php echo $result[$i]['ArrivalDate']; ?></td>
+          <td><?php echo $result[$i]['ArrivalTime']; ?></td>
+    <?php
+        }
+      }
+    ?>
+    </tr>
+  </table>
+
+  <table class="table" style="display: none;" id="Departuretable">
+    <tr>
+      <th>Flight Number</th>
+      <th>Start Point</th>
+      <th>Destination</th>
       <th>Departure Date</th>
       <th>Departure Time</th>
     </tr>
@@ -456,40 +490,18 @@ background-color: white;
 
       for ($i=0; $i < count($result); $i++)
       {
+        if($result[$i]['StartPoint'] == 'Riga')
+        {
     ?>
-      <td><?php echo $result[$i]['FlightNr']; ?></td>
-      <td><?php echo $result[$i]['StartPoint']; ?></td>
-      <td><?php echo $result[$i]['Destination']; ?></td>
-      <td><?php echo $result[$i]['DepartureDate']; ?></td>
-      <td><?php echo $result[$i]['DepartureTime']; ?></td>
+          <td><?php echo $result[$i]['FlightNr']; ?></td>
+          <td><?php echo $result[$i]['StartPoint']; ?></td>
+          <td><?php echo $result[$i]['Destination']; ?></td>
+          <td><?php echo $result[$i]['DepartureDate']; ?></td>
+          <td><?php echo $result[$i]['DepartureTime']; ?></td>
     <?php
+        }
       }
     ?>
-    </tr>
-  </table>
-
-  <table class="table" style="display: none;" id="Departuretable">
-    <tr>
-      <th>Time</th>
-      <th>Arrived from</th>
-      <th>Terminal</th>
-      <th>Status</th>
-    </tr>
-    <tr>
-      <?php 
-      $query = "SELECT FlightNr, StartPoint, Destination, DepartureDate, DepartureTime FROM flightlist";
-      $result = mysqli_query($con, $query);
-      for ($i=0; $i < mysqli_num_rows($result); $i++)
-      {
-    ?>
-      <td><?php //echo $i['FlightNr']; ?></td>
-      <td><?php //echo $i['StartPoint']; ?></td>
-      <td><?php //echo $i['Destination']; ?></td>
-      <td><?php //echo $i['DepartureDate']; ?></td>
-      <td><?php //echo $i['DepartureTime']; ?></td>
-      <?php
-      }
-      ?>
     </tr>
   </table>
 

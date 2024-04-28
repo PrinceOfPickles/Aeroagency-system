@@ -2,24 +2,6 @@
     require_once('db_con_config.php');
 ?>
 
-
-
-<?php
-/*$query = "SELECT * FROM flightlist";
-$result = mysqli_query($con, $query);
-while ($row = mysqli_fetch_assoc * $result) {
-?>
-  <td><?php echo $row['FlightNr']; ?></td>
-  <td><?php echo $row['StartPoint']; ?></td>
-  <td><?php echo $row['EndPoint']; ?></td>
-  <td><?php echo $row['DepartureDate']; ?></td>
-  <td><?php echo $row['DepartureTime']; ?></td>
-<?php
-}
-*/
-?>
-
-
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
@@ -466,15 +448,20 @@ background-color: white;
     <tr>
     <?php
       $query = "SELECT FlightNr, StartPoint, Destination, DepartureDate, DepartureTime FROM flightlist";
-      $result = mysqli_query($con, $query);
-      for ($i=0; $i < mysqli_num_rows($result); $i++)
+      $resultsql = mysqli_query($con, $query);
+      for ($i=0; $i<mysqli_num_rows($resultsql); $i++)
+      {
+        $result[$i] = mysqli_fetch_array($resultsql);
+      }
+
+      for ($i=0; $i < count($result); $i++)
       {
     ?>
-      <td><?php echo $i['FlightNr']; ?></td>
-      <td><?php echo $i['StartPoint']; ?></td>
-      <td><?php echo $i['Destination']; ?></td>
-      <td><?php echo $i['DepartureDate']; ?></td>
-      <td><?php echo $i['DepartureTime']; ?></td>
+      <td><?php echo $result[$i]['FlightNr']; ?></td>
+      <td><?php echo $result[$i]['StartPoint']; ?></td>
+      <td><?php echo $result[$i]['Destination']; ?></td>
+      <td><?php echo $result[$i]['DepartureDate']; ?></td>
+      <td><?php echo $result[$i]['DepartureTime']; ?></td>
     <?php
       }
     ?>
@@ -495,11 +482,11 @@ background-color: white;
       for ($i=0; $i < mysqli_num_rows($result); $i++)
       {
     ?>
-      <td><?php echo $i['FlightNr']; ?></td>
-      <td><?php echo $i['StartPoint']; ?></td>
-      <td><?php echo $i['Destination']; ?></td>
-      <td><?php echo $i['DepartureDate']; ?></td>
-      <td><?php echo $i['DepartureTime']; ?></td>
+      <td><?php //echo $i['FlightNr']; ?></td>
+      <td><?php //echo $i['StartPoint']; ?></td>
+      <td><?php //echo $i['Destination']; ?></td>
+      <td><?php //echo $i['DepartureDate']; ?></td>
+      <td><?php //echo $i['DepartureTime']; ?></td>
       <?php
       }
       ?>

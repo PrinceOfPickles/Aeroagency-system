@@ -322,7 +322,7 @@
       left: 900px;
       position: absolute;
     }
-	.username
+	.E_mail
 {
  width: 300px;
   height: 60px;
@@ -331,7 +331,7 @@
    left: 700px; 
    position: absolute; 
 }
-.username_input
+.E_mail_input
 {
 width: 300px;
   height: 40px;
@@ -427,15 +427,16 @@ background-color: white;
 	 <p class="Economy_label" style=" display: none;" id="Economy_label"> Economy</p>
 	
 	
-	 
-	 <p class="username" id="username" style=" display: none;"> Username:</p>
-	 <input type="text"id="username_input" style=" display: none;" class="username_input">
-	 
-	 <p class="password" id="password" style=" display: none;"> Password:</p>
-	 <input type="password"id="password_input" style=" display: none;" class="password_input">
-	 
-	 <button class="Login_button" id="Login_button" style=" display: none;"> Login</button>
+	 <form action="login.php" method="POST">
+	    <p class="E_mail" name="E_mail" id="E_mail" style=" display: none;"> E-mail:</p>
+	    <input type="text" name="E_mail_input" id="E_mail_input" style=" display: none;" class="E_mail_input">
 
+	    <p class="password" name="password" id="password" style=" display: none;"> Password:</p>
+	    <input type="password" name="password_input" id="password_input" style=" display: none;" class="password_input">
+	 
+	 <button class="Login_button" id="Login_button" type="submit" style=" display: none;"> Login</button>
+  </form>
+  
   <table class="table" style="display: none;" id="Arrivaltable">
 
     <tr>
@@ -524,8 +525,8 @@ background-color: white;
       document.getElementById("Status").style.display = "block";
       document.getElementById("Status_input").style.display = "block";
 	  
-	  document.getElementById("username").style.display = "none";
-	 document.getElementById("username_input").style.display = "none";
+	  document.getElementById("E_mail").style.display = "none";
+	 document.getElementById("E_mail_input").style.display = "none";
 	  document.getElementById("password").style.display = "none";
 	  document.getElementById("password_input").style.display = "none";
 	  document.getElementById("Login_button").style.display = "none";
@@ -566,8 +567,8 @@ background-color: white;
       document.getElementById("Status").style.display = "block";
       document.getElementById("Status_input").style.display = "block";
 	  
-	  document.getElementById("username").style.display = "none";
-	 document.getElementById("username_input").style.display = "none";
+	  document.getElementById("E_mail").style.display = "none";
+	 document.getElementById("E_mail_input").style.display = "none";
 	  document.getElementById("password").style.display = "none";
 	  document.getElementById("password_input").style.display = "none";
 	  document.getElementById("Login_button").style.display = "none";
@@ -611,8 +612,8 @@ background-color: white;
       document.getElementById("Economy").style.display = "block";
       document.getElementById("Economy_label").style.display = "block";
 	  
-	  document.getElementById("username").style.display = "none";
-	 document.getElementById("username_input").style.display = "none";
+	  document.getElementById("E_mail").style.display = "none";
+	 document.getElementById("E_mail_input").style.display = "none";
 	  document.getElementById("password").style.display = "none";
 	  document.getElementById("password_input").style.display = "none";
 	  document.getElementById("Login_button").style.display = "none";
@@ -649,8 +650,8 @@ background-color: white;
     }
 	function Login()
 	{
-	document.getElementById("username").style.display = "block";
-	 document.getElementById("username_input").style.display = "block";
+	document.getElementById("E_mail").style.display = "block";
+	 document.getElementById("E_mail_input").style.display = "block";
 	  document.getElementById("password").style.display = "block";
 	  document.getElementById("password_input").style.display = "block";
 	  document.getElementById("Login_button").style.display = "block";
@@ -686,6 +687,7 @@ background-color: white;
       box.style.backgroundColor = 'white';
 	    const element = document.getElementById("AD");
      element.remove();
+     
 	}
   </script>
 
